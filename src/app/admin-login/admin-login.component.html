@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <!-- <mat-toolbar-row> -->
+  <span fxFlex>Prop 4</span>
+  <!-- <span class="example-spacer"></span> -->
+  <button mat-icon-button matSuffix>
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <!-- </mat-toolbar-row> -->
+</mat-toolbar>
+<div fxlayout="column">
+
+
+  <div align="center">
+    <div fxLayout="column">
+      <mat-form-field>
+        <input matInput placeholder="Username" [(ngModel)]="username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [(ngModel)]="password" appAdminPassword>
+        <button mat-icon-button matSuffix (click)="evaluateHide()">
+          <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)=login()>
+      <ng-content></ng-content>
+    </button>
+  </div>
+</div>
